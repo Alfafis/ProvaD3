@@ -7,28 +7,25 @@
 <ion-content>
   <ion-grid>
     <ion-row>
+      <ion-title>Cadastrar Pessoa</ion-title>
       <ion-col>
-        <ion-form>
-          <form (ngSubmit)="InsertPessoa()">
-            <ion-item>
-              <ion-label>Nome</ion-label>
-              <ion-input type="text" [(ngModel)]="pessoa.nome" name="nome"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label>idade</ion-label>
-              <ion-input type="number" [(ngModel)]="pessoa.idade" name="idade"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label>Saúde Mental</ion-label>
-              <ion-input type="text" [(ngModel)]="pessoa.saudeMental" name="saudeMental"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label>Raça/Cor</ion-label>
-              <ion-input type="text" [(ngModel)]="pessoa.racaCor" name="racaCor"></ion-input>
-            </ion-item>
-            <ion-button type="submit" color="primary" block>Criar Pessoa</ion-button>
-          </form>
-        </ion-form>
+        <ion-item>
+          <ion-label>Nome</ion-label>
+          <ion-input type="text" [(ngModel)]="pessoa.nome" name="nome"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>idade</ion-label>
+          <ion-input type="number" [(ngModel)]="pessoa.idade" name="idade"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Saúde Mental</ion-label>
+          <ion-input type="text" [(ngModel)]="pessoa.saudeMental" name="saudeMental"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Raça/Cor</ion-label>
+          <ion-input type="text" [(ngModel)]="pessoa.racaCor" name="racaCor"></ion-input>
+        </ion-item>
+        <ion-button type="submit" (click)="criate()" color="primary" block>Criar Pessoa</ion-button>
       </ion-col>
     </ion-row>
     <ion-row>

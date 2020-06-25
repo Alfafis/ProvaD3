@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Pessoa } from '../pessoas.model';
+import { PessoaService } from '../pessoa.service';
+import { create } from 'domain';
 
 @Component({
   selector: 'app-saude',
@@ -8,24 +10,23 @@ import { Pessoa } from '../pessoas.model';
 })
 export class SaudePage implements OnInit {
 
-  pessoa: Pessoa
-  aux: any[]
+  pessoa: Pessoa = {};
 
-  constructor() { }
+  constructor(private pessoaService: PessoaService) { }
 
-  async ngOnInit() {
+  async ngOnInit() { }
 
+  async create() {
+    await this.pessoaService.insert(this.pessoa);
+    console.log(this.pessoa);
   }
 
-  SearchId() {
-    this.pessoa.forEach(element => {
-      if (element.id == this.aux.id) {
-
-      }
-    });
+  async SearchId() {
+    console.log(await this.pessoaService.SearchId(this.id));
   }
-  SearchCor() {
 
+  async SearchCor() {
+    console.log(await this.pessoaService.SearchCor(this.racaCor))
   }
 
 }
